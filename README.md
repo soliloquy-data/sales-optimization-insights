@@ -36,7 +36,7 @@ Classify deals into high, mid, and low-value segments using revenue percentiles 
 
 📄 [View SQL Query](sql/high_value_deals.sql)
 
-🖼️ ![High Value Deals Chart](bi_dashboard/screenshots/high_value_deals.png)
+🖼️ ![High Value Deals Chart](sql_images/Deal_segments.png) , ![High Value Deals Chart](sql_images/Top_10_sales_agents_high_value_deals.png)
 
 **💡 Insight:**  
 Highlights top-performing agents based on high-value wins — helping prioritize strategic leads and inform bonus structures.
