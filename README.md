@@ -36,7 +36,7 @@ Classify deals into high, mid, and low-value segments using revenue percentiles 
 
 📄 [View SQL Query](sql/high_value_deals.sql)
 
-🖼️ ![High Value Deals Chart](sql_images/Deal_segments.png) , ![High Value Deals Chart](sql_images/Top_10_sales_agents_high_value_deals.png)
+🖼️ ![High Value Deals Chart](sql_images/Deal_Segments_top10_agents.png)  
 
 **💡 Insight:**  
 Highlights top-performing agents based on high-value wins — helping prioritize strategic leads and inform bonus structures.
@@ -50,7 +50,7 @@ Measure average time spent at each sales stage and detect where leads most commo
 
 📄 [View SQL Query](sql/sales_pipeline_velocity.sql)
 
-🖼️ ![Funnel Drop-Off Chart](bi_dashboard/screenshots/funnel_velocity.png)
+🖼️ ![Sales_pepeleine_velocity](sql_images/DW_DL.png)
 
 **💡 Insight:**  
 Bottlenecks are most common at the "Proposal → Negotiation" stage, suggesting follow-up automation or better proposal assets.
@@ -64,7 +64,7 @@ Calculate the average time it takes to close a deal per industry to assess sales
 
 📄 [View SQL Query](sql/avg_deal_close_time.sql)
 
-🖼️ ![Avg Deal Time Chart](bi_dashboard/screenshots/avg_closing_time.png)
+🖼️ ![Avg Deal Time Chart](sql_images/Avg_deal_close_days.png)
 
 **💡 Insight:**  
 Deals in Tech and Finance sectors close ~35% faster than in Healthcare — suggesting a need for industry-specific strategies.
@@ -78,7 +78,7 @@ Identify accounts with a high lost-deal percentage and long gaps since their las
 
 📄 [View SQL Query](sql/churn_risk_accounts.sql)
 
-🖼️ ![Churn Risk Accounts](bi_dashboard/screenshots/churn_risk.png)
+🖼️ ![Churn Risk Accounts](sql_images/Top15_churn_risk_accnts.png)
 
 **💡 Insight:**  
 Early detection of churn-prone accounts allows for proactive outreach and customer retention campaigns.
@@ -92,7 +92,7 @@ Analyze monthly and yearly revenue fluctuations to detect seasonal sales trends.
 
 📄 [View SQL Query](sql/revenue_seasonality.sql)
 
-🖼️ ![Seasonality Chart](bi_dashboard/screenshots/revenue_seasonality.png)
+🖼️ ![Seasonality Chart](sql_images/Total_deals_Revenue.png)
 
 **💡 Insight:**  
 Consistent Q4 spikes suggest strong seasonal influence — helping improve forecasting, staffing, and campaign timing.
