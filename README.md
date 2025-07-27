@@ -48,7 +48,7 @@ Highlights top-performing agents based on high-value wins — helping prioritize
 **🎯 Objective:**  
 Measure average time spent at each sales stage and detect where leads most commonly drop off in the funnel.
 
-📄 [View SQL Query](sql/funnel_velocity.sql)
+📄 [View SQL Query](sql/sales_pipeline_velocity.sql)
 
 🖼️ ![Funnel Drop-Off Chart](bi_dashboard/screenshots/funnel_velocity.png)
 
@@ -62,7 +62,7 @@ Bottlenecks are most common at the "Proposal → Negotiation" stage, suggesting 
 **🎯 Objective:**  
 Calculate the average time it takes to close a deal per industry to assess sales cycle variation.
 
-📄 [View SQL Query](sql/avg_deal_closing_time.sql)
+📄 [View SQL Query](sql/avg_deal_close_time.sql)
 
 🖼️ ![Avg Deal Time Chart](bi_dashboard/screenshots/avg_closing_time.png)
 
