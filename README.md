@@ -1,6 +1,6 @@
-# 📊 Sales Optimization And Insights
+# 📊 Sales Insights & Optimization Dashboard
 
-This portfolio project demonstrates how data-driven insights can drive better sales strategy, agent performance, and customer retention.  
+This project demonstrates how data-driven insights can drive better sales strategy, agent performance, and customer retention.  
 It is divided into two parts:
 
 - ✅ **SQL Analysis** – Extracting actionable insights via analytical queries  
@@ -11,7 +11,7 @@ It is divided into two parts:
 ## 🔍 Business Questions Answered
 
 1. What drives high-value deals and who closes them?
-2. Where are the bottlenecks in our sales funnel?
+2. Where are the bottlenecks in the sales funnel?
 3. How long do deals take to close by industry?
 4. Which accounts are at risk of churn?
 5. How does sales performance vary by month or season?
@@ -39,21 +39,22 @@ Classify deals into high, mid, and low-value segments using revenue percentiles 
 🖼️ ![High Value Deals Chart](sql_images/Deal_Segments_top10_agents.png)  
 
 **💡 Insight:**  
-Highlights top-performing agents based on high-value wins — helping prioritize strategic leads and inform bonus structures.
+Highlights top-performing agents based on high-value wins — helps prioritize strategic leads and inform bonus structures.
 
 ---
 
 ### 2. 🔄 Sales Funnel Velocity & Drop-Off Analysis
 
 **🎯 Objective:**  
-Measure average time spent at each sales stage and detect where leads most commonly drop off in the funnel.
+Identify which accounts are moving faster or slower through different deal stages and can highlight bottlenecks.
 
 📄 [View SQL Query](sql/sales_pipeline_velocity.sql)
 
-🖼️ ![Sales_pepeleine_velocity](sql_images/DW_DL.png)
+🖼️ ![Sales_pipeleine_velocity](sql_images/DW_DL.png)
 
 **💡 Insight:**  
-Bottlenecks are most common at the "Proposal → Negotiation" stage, suggesting follow-up automation or better proposal assets.
+Accounts with deals taking longer than average to close—whether won or lost—highlight inefficiencies in the sales process. 
+Addressing these delays can improve overall pipeline velocity and conversion rates.
 
 ---
 
@@ -67,102 +68,107 @@ Calculate the average time it takes to close a deal per industry to assess sales
 🖼️ ![Avg Deal Time Chart](sql_images/Avg_deal_close_days.png)
 
 **💡 Insight:**  
-Deals in Tech and Finance sectors close ~35% faster than in Healthcare — suggesting a need for industry-specific strategies.
+This analysis reveals the average time taken to close deals across different industries, highlighting sectors with faster or slower sales cycles.
 
 ---
 
 ### 4. 📉 Churn Risk Analysis Based on Deal Loss Patterns
 
 **🎯 Objective:**  
-Identify accounts with a high lost-deal percentage and long gaps since their last won deal — early indicators of churn risk.
+This query identifies accounts with a high risk of churn by calculating the lost deal percentage and the time gap since their last won deal.
 
 📄 [View SQL Query](sql/churn_risk_accounts.sql)
 
 🖼️ ![Churn Risk Accounts](sql_images/Top15_churn_risk_accnts.png)
 
 **💡 Insight:**  
-Early detection of churn-prone accounts allows for proactive outreach and customer retention campaigns.
+This analysis identifies accounts at high risk of churn by flagging those with a high percentage of lost deals (≥35%) and a long gap since their last won deal,
+helping prioritize retention efforts.
 
 ---
 
 ### 5. 📅 Sales Seasonality & Revenue Impact Analysis
 
 **🎯 Objective:**  
-Analyze monthly and yearly revenue fluctuations to detect seasonal sales trends.
+This query identifies seasonal trends in sales performance by analyzing revenue fluctuations across months.
+
 
 📄 [View SQL Query](sql/revenue_seasonality.sql)
 
 🖼️ ![Seasonality Chart](sql_images/Total_deals_Revenue.png)
 
 **💡 Insight:**  
-Consistent Q4 spikes suggest strong seasonal influence — helping improve forecasting, staffing, and campaign timing.
+This analysis reveals monthly sales seasonality by aggregating total revenue and deal counts, helping identify peak periods and optimize sales planning accordingly.
 
 ---
 
 
 ## 📊 Power BI Dashboard (3 Pages)
 
+This interactive dashboard visualizes the insights uncovered through SQL — covering key sales metrics, product comparisons, and funnel performance by region. 
+Built with custom DAX, slicers, drill-throughs, and bookmarks for dynamic exploration.
+
 > Built using Power BI Desktop – includes DAX measures, calculated columns, and relationships.
 
-### 📈 Page 1: Sales Performance Overview
-- KPIs: Total Revenue, Win Count, Avg Deal Size
-- Breakdown by industry, sales agent, and customer
+> 📁 [Download Power BI File](power_bi/Sales_dashboard.pbix)
 
-![Sales Performance](bi_dashboard/screenshots/sales_performance.png)
+
+### 📈 Page 1: Sales Performance Overview  
+This page highlights key sales metrics and performance breakdowns:
+
+- **KPIs**: Total Revenue, Deals Won, Average Deal Size, Win Rate, Avg Days to Close  
+- **Breakdowns** by industry, account, and agent performance  
+- **Tables and charts** showing top agents by revenue and deal volume  
+- **Interactive features**: metric toggle (by sector), region filter, drill-through to product view, and bookmarks for switching table and sales views  
+
+![Sales Performance](power_bi_images/Sales_Performance_Overview.png)
 
 ---
 
-### 📉 Page 2: Sales Funnel & Agent Performance
-- Drop-off & Conversion at each funnel stage
-- Agent Win Rates, Deal Count, and Revenue
+### 📉 Page 2: Product Sales Comparison
+Designed to enable clear, side-by-side comparisons of product sales performance, this page:
 
-![Funnel](bi_dashboard/screenshots/funnel_analysis.png)
+- Side-by-side visuals showing **top products by revenue** and **deals won**  
+- Slicers to toggle between metrics including **revenue**, **deals won**, and **MoM sales %**  
+- Detailed **product-level table** for granular insights  
+- **Reset button** to clear slicers and drill-through filters from Page 1  
+
+![Product Sales Comparison](power_bi_images/Product_Analysis.png)
 
 ---
 
-### 📅 Page 3: Revenue Trends & Product Insights
-- Monthly Revenue Trends with Forecast
-- Top-Selling Products
-- Revenue by Region & Sector
+### 🧭 Page 3: Regional & Funnel Performance Analysis  
+This page provides a detailed view of regional sales results and funnel stage performance:
 
-![Revenue Trends](bi_dashboard/screenshots/agent_ranking.png)
+- **KPIs**: Engage Conversion, Closed Conversion, Loss Rate, Win Rate  
+- **Breakdowns** by region, manager, and agent performance  
+- **Tables and charts** showing revenue, deal size, win rates, and funnel drop-offs  
+- **Interactive features**: region and account filters, dynamic highlights, and drill-downs to agent-level insights  
+
+
+![Regional Trends](power_bi_images/Sales_Funnel_Regional_breakdown.png)
 
 ---
 
 ## 📁 Files Included
 
 - `sql/` folder – All business queries
-- `bi_dashboard/` – Power BI `.pbix` file and visual exports
+- `power_bi/` – Power BI `.pbix` file and visual exports
 - `data/` – Sample dataset to test or recreate
-
----
-
-## ▶️ How to Use
-
-1. Open Power BI Desktop
-2. Connect to your local or hosted SQL DB
-3. Paste queries or use `DirectQuery`
-4. Customize visuals and KPIs
-
----
-
-## 🌐 [Optional] Interactive Version (Power BI Service)
-If you use Power BI Service, add:
-
-[🔗 View Interactive Dashboard](https://app.powerbi.com/view?r=XXXXX)
 
 ---
 
 ## ✅ Key Skills Demonstrated
 
-- SQL for business insights & KPIs
-- Data modeling & DAX in Power BI
-- Dashboard design with drilldowns, trends, comparisons
-- Analytical storytelling
+- Writing advanced SQL for business insights & KPIs  
+- Data cleaning with Power Query  
+- Data modeling and DAX in Power BI  
+- Dashboard design with drilldowns, trends, bookmarks  
+- Analytical storytelling using interactive visuals  
 
 ---
 
 ## 💡 Future Improvements
 - Automate data refresh from SQL to Power BI
 - Add ML scoring (propensity to churn, lead scoring)
-- Add web app interface using Streamlit
+
